@@ -57,4 +57,6 @@ function formatMoney(number){
     return '$' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
 
-
+// Event Listeners
+// Add New User
+addUserBtn.addEventListener('click', getRandomUser)
