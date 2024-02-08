@@ -27,10 +27,29 @@ async function getRandomUser(){
     // Add new person's data to data array
     addData(newUser);
 }
+getRandomUser();
+getRandomUser();
+getRandomUser();
 
 // Add new person's data to data array
 function addData(personData){
     data.push(personData);
+    
+    // Update DOM
+    updateDOM();
+}
+
+// Update DOM
+function updateDOM(providedData = data){
+    // Clear main div
+    main.innerHTML = '<h2> <strong>Person</strong> Wealth</h2>';
+
+    providedData.forEach((item) => {
+        const element = document.createElement('div');
+        element.classList.add('person');
+        element.innerHTML = `<strong>${item.name}</strong> ${item.money}`;
+        main.appendChild(element);
+    })
 }
 
 
