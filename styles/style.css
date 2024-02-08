@@ -58,6 +58,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   font-weight: 300;
+  margin-top: 20px;
 }
 
 .person {
