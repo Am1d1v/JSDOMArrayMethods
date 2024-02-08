@@ -2,10 +2,10 @@
 
 const main = document.querySelector('#main');
 const addUserBtn = document.querySelector('#add-user');
-const doubleaddUserBtn = document.querySelector('#double');
-const showMillionairesaddUserBtn = document.querySelector('#show_millionaires');
-const sortaddUserBtn = document.querySelector('#sort');
-const calculateWealthaddUserBtn = document.querySelector('#calculate_wealth');
+const doubleBtn = document.querySelector('#double');
+const showMillionairesBtn = document.querySelector('#show_millionaires');
+const sortBtn = document.querySelector('#sort');
+const calculateWealthBtn = document.querySelector('#calculate_wealth');
 
 // Array of persons
 let data = [];
@@ -65,10 +65,19 @@ function doubleMoney(){
     updateDOM();
 }
 
+// Sort List by Richest
+function sortPersons(){
+     data.sort((firstObject, secondObject) => secondObject.money - firstObject.money);
 
+    updateDOM();
+}
 
 // Event Listeners
 // Add New User
 addUserBtn.addEventListener('click', getRandomUser)
 
-doubleaddUserBtn.addEventListener('click', doubleMoney);
+// Double Everyones Money
+doubleBtn.addEventListener('click', doubleMoney);
+
+// Sort List by Richest
+sortBtn.addEventListener('click', sortPersons)
